@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#first').find('img').click(function () {
+                $('#first').hide();
+                $('#second').show();
+            });
+            $('.close').click(function () {
+                $('#second').hide();
+                $('#third').show();
+            });
+            $('.overlay').click(function(){
+                $('#first').show();
+                $('#third').hide();
+            });
+        });
+    </script>
+    <style>
+        #first {
+            display: block;
+            width: 100%;
+        }
+
+
+        #first img {
+            width: 400px;
+            margin-left: auto;
+            Margin-right: auto;
+        }
+
+        #second {
+            display: none;
+        }
+
+        #second img.popup {
+            width: 400px;
+        }
+
+        #second img.close {
+            width: 100px;
+            position: absolute;
+            left: 300px;
+            top:10px;
+        }
+
+        #third {
+            display: none;
+            width: 400px;
+        }
+        #third .overlay{
+            width: 400px;
+            height:400px;
+            position: absolute;
+            z-index: 110;
+        }
+        #third img{
+            width: 400px;
+            position: absolute;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="first"><img class="button" src="./firstpic.png" /></div>
+    <div id="second"><img class="popup" src="./popup.png" /><img class="close" src="./close.png" /></div>
+    <div id="third"><img class="overlay" src="./money.gif" /><img src="./lastpic.png"/></div>
+</body>
+
+</html>
